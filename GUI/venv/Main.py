@@ -6,7 +6,7 @@ import os
 from PIL import ImageTk, Image
 import os
 import time
-import face_recognition as fr
+#import face_recognition as fr
 #import FaceRecognition
 
 #os.system( 'raspistill -o p.png')
@@ -45,16 +45,21 @@ class GUI:
         #self.root.filename=""
         self.besetzt = False
         self.counter = 0
+        self.number = 0
 
 
 
     def load(self):
         self.besetzt = True
         if self.counter < 3:
-            self.root.filename = filedialog.askopenfilename(initialdir = "/home/pi/PycharmProjects/GUI/venv", title = "Select a file", filetypes =(("png files", "*.png"), ("jpg files", "*.jpg"))) #all files "*.*"
-            self.umwandlung = str(self.root.filename)
-            self.counter = self.counter + 1
-            self.display(self.umwandlung)
+            self.root.filename = filedialog.askopenfilename(initialdir = "/home/pi/Facial_recognition/GUI/venv", title = "Select a file", filetypes =(("png files", "*.png"), ("jpg files", "*.jpg"))) #all files "*.*"
+            if not self.root.filename:      #if not selecting image
+                #self.counter = 0
+                pass
+            else:
+                self.umwandlung = str(self.root.filename)
+                self.counter = self.counter + 1
+                self.display(self.umwandlung)
         else:
             self.msgerror()
             #self.errorbox()
@@ -65,19 +70,20 @@ class GUI:
         if self.besetzt == False:
             self.msgbox()
             self.counter = 1
-            os.system( 'raspistill -o /home/pi/PycharmProjects/GUI/venv/1.png')
-            self.bild1 = "/home/pi/PycharmProjects/GUI/venv/1.png"
+            os.system( 'raspistill -o /home/pi/Facial_recognition/GUI/venv/1.png')
+            self.bild1 = "/home/pi/Facial_recognition/GUI/venv/1.png"
             self.display(self.bild1)
             time.sleep(1)
             self.counter = 2
-            os.system('raspistill -o /home/pi/PycharmProjects/GUI/venv/2.png')
-            self.bild2 = "/home/pi/PycharmProjects/GUI/venv/2.png"
+            os.system('raspistill -o /home/pi/Facial_recognition/GUI/venv/2.png')
+            self.bild2 = "/home/pi/Facial_recognition/GUI/venv/2.png"
             self.display(self.bild2)
             time.sleep(1)
             self.counter = 3
-            os.system('raspistill -o /home/pi/PycharmProjects/GUI/venv/3.png')
-            self.bild3 = "/home/pi/PycharmProjects/GUI/venv/3.png"
+            os.system('raspistill -o /home/pi/Facial_recognition/GUI/venv/3.png')
+            self.bild3 = "/home/pi/Facial_recognition/GUI/venv/3.png"
             self.display(self.bild3)
+            #self.stickpictures(self.bild1, self.bild2)
             #self.display(""
         else:
             self.msgerror2()
@@ -87,14 +93,49 @@ class GUI:
 
 
     def fg(self):
-        self.stickpictures(self.img, self.img2, self.img3)
-        #FaceRecognition.run()
-        #print(self.root.filename)
-        pass
+        #self.stickpictures(self.img, self.img2, self.img3)
 
-    def stickpictures(self):        #a, b, c
-        self.bilda = Image.open("/home/pi/Downloads/bild2.jpg")
-        self.bildb = Image.open("/home/pi/Downloads/bild2.jpg")
+        #print(self.root.filename)
+        #self.image1 = self.img
+        #self.image2 = str(self.img2)
+        #print(self.image1)
+        #print(self.image2)
+        #print()
+        #exception handling jenachdem wieviele bilder uebergeben werden
+        self.path1 = "/home/pi/Facial_recognition/GUI/venv/Resize1.jpg"
+        if self.number == 1:
+            # FaceRecognition.run()
+            self.displayresult()
+            pass
+        elif self.number == 2:
+            self.path2 = "/home/pi/Facial_recognition/GUI/venv/Resize2.jpg"
+            self.stickpictures(self.path1, self.path2)
+            self.displayresult()
+
+        elif self.number == 3:
+            self.path2 = "/home/pi/Facial_recognition/GUI/venv/Resize2.jpg"
+            self.path3 = "/home/pi/Facial_recognition/GUI/venv/Resize3.jpg"
+            self.stickpictures(self.path1, self.path2)
+            self.stickimage = "/home/pi/Facial_recognition/GUI/venv/StickedImage.jpg"
+            self.stickpictures(self.stickimage, self.path3)
+            self.displayresult()
+
+        else:
+            self.msgerror3()
+            pass
+
+
+        #self.stickpictures(str(self.new), str(self.new2))
+
+
+
+        #
+
+    def stickpictures(self, a, b):        #a, b, c
+        self.bilda = Image.open(a)           #"/home/pi/Facial_recognition/GUI/venv/Resize1.jpg"
+
+
+        self.bildb = Image.open(b)
 
         (self.width1, self.height1) = self.bilda.size
         (self.width2, self.height2) = self.bildb.size
@@ -105,7 +146,8 @@ class GUI:
         self.result_image.paste(im = self.bilda, box = (0, 0))
         self.result_image.paste(im = self.bildb, box = (self.width1, 0))
 
-        self.result_image.save("ww.jpg")
+        self.result_image.save("StickedImage.jpg")
+        print("done")
 
 
 
@@ -119,7 +161,7 @@ class GUI:
         self.button2.place(x = 0, y = 50, anchor = "nw")
 
     def facial_recognitionbutton(self):
-        self.button3 = tk.Button(self.root, text="Run Facial Recognition", command=self.clear)
+        self.button3 = tk.Button(self.root, text="Run Facial Recognition", command=self.fg)
         self.button3.place(relx=1, rely=1, anchor="se")
 
     def clearbutton(self):
@@ -140,6 +182,10 @@ class GUI:
     def msgerror2(self):
         tk.messagebox.showerror \
             ("Fehler", "Entweder alle Fotos hochladen oder alle aufnehmen!")
+
+    def msgerror3(self):
+        tk.messagebox.showerror \
+            ("Fehler", "Es muss mindestens ein Bild geladen / gemacht werden!")
 
     def layout(self):
         self.fr1 = tk.Frame(self.root, width=109, height=135, relief="sunken", bd=1)
@@ -163,6 +209,7 @@ class GUI:
                 #self.img = ImageTk.PhotoImage(Image.open(x))
                 self.im = Image.open(x)
                 self.new = self.im.resize((640, 480))
+                self.new.save("Resize1.jpg")
                 self.img = ImageTk.PhotoImage(self.new)
                 #self.img = tk.PhotoImage(file = "bild2.jpg")
                 self.canvas.create_image(10, 10, anchor=tk.NW, image = self.img)
@@ -170,18 +217,34 @@ class GUI:
                 #self.clear()
                 #self.besetzt = True
                 #self.counter = self.counter + 1
+                self.number = 1
             if self.counter == 2:
                 self.im2 = Image.open(x)
                 self.new2 = self.im2.resize((640, 480))
+                self.new2.save("Resize2.jpg")
                 self.img2 = ImageTk.PhotoImage(self.new2)
                 self.canvas2.create_image(10, 10, anchor=tk.NW, image=self.img2)
+                self.number = 2
                 #display daneben
 
             if self.counter == 3:
                 self.im3 = Image.open(x)
                 self.new3 = self.im3.resize((640, 480))
+                self.new3.save("Resize3.jpg")
                 self.img3 = ImageTk.PhotoImage(self.new3)
                 self.canvas3.create_image(10, 10, anchor=tk.NW, image=self.img3)
+                self.number = 3
+
+    def displayresult(self):
+        if self.number == 1:
+            self.endpicture = ImageTk.PhotoImage(Image.open(self.path1))
+            self.canvas4.create_image(10, 10, anchor=tk.NW, image=self.endpicture)
+
+        else:
+            self.endpicturepath = "/home/pi/Facial_recognition/GUI/venv/StickedImage.jpg"
+            self.endpicture = ImageTk.PhotoImage(Image.open(self.endpicturepath))
+            self.canvas4.create_image(10, 10, anchor=tk.NW, image=self.endpicture)
+
 
     """def show(self):
         self.im = Image.open("kik.jpg")
@@ -199,6 +262,8 @@ class GUI:
         self.img3 = None
         self.counter = 0
         self.besetzt = False
+        self.number = 0
+        self.endpicture = None
        # self.img.place(x = 1500, y = 0)
 
     def window(self):

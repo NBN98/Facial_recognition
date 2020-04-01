@@ -1,7 +1,7 @@
 # Face Recognition
 - Face Recognition on Raspberry Pi
 - Created a own GUI, which loads/takes up to 3 images to run a face recognition algorithm
-- Used tkinter, OpenCV
+- Used tkinter, OpenCV, PIL, Pillow, Face_recognition
 
 # User Guide and Prerequirements (only for Raspberry Pi with raspbian/linux os
 - Start the Main.py \GUI\venv

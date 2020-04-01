@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58f4e022-e924-4bc5-ad02-a242a2328a9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GUI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/FaceRecognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/FaceRecognition.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/ww.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/ww.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Resize1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Resize1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Resize2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Resize2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Resize3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Resize3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/StickedImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/StickedImage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/identify.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/identify.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,9 +126,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.Facial_Recognition" />
+      <item itemvalue="Python.FaceRecognition" />
       <item itemvalue="Python.Facial_recognition" />
       <item itemvalue="Python.Main" />
-      <item itemvalue="Python.FaceRecognition" />
     </list>
     <recent_temporary>
       <list>
@@ -153,6 +152,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="680" y="154" width="549" height="744" key="#Main" timestamp="1585675628862">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="680" y="154" width="549" height="744" key="#Main/0.0.1920.1054@0.0.1920.1054" timestamp="1585675628862" />
     <state x="370" y="132" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585579119237">
       <screen x="0" y="0" width="1824" height="948" />
     </state>
@@ -162,26 +165,26 @@
     </state>
     <state x="695" y="232" width="424" height="482" key="FileChooserDialogImpl/0.0.1824.948@0.0.1824.948" timestamp="1585586804927" />
     <state x="545" y="391" width="426" height="484" key="FileChooserDialogImpl/0.0.1920.1054@0.0.1920.1054" timestamp="1585613243082" />
-    <state width="1898" height="280" key="GridCell.Tab.0.bottom" timestamp="1585664479941">
+    <state width="1898" height="280" key="GridCell.Tab.0.bottom" timestamp="1585692783914">
       <screen x="0" y="0" width="1920" height="1054" />
     </state>
     <state width="1802" height="245" key="GridCell.Tab.0.bottom/0.0.1824.948@0.0.1824.948" timestamp="1585597037051" />
-    <state width="1898" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1054@0.0.1920.1054" timestamp="1585664479941" />
-    <state width="1898" height="280" key="GridCell.Tab.0.center" timestamp="1585664479938">
+    <state width="1898" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1054@0.0.1920.1054" timestamp="1585692783914" />
+    <state width="1898" height="280" key="GridCell.Tab.0.center" timestamp="1585692783911">
       <screen x="0" y="0" width="1920" height="1054" />
     </state>
     <state width="1802" height="245" key="GridCell.Tab.0.center/0.0.1824.948@0.0.1824.948" timestamp="1585597037049" />
-    <state width="1898" height="280" key="GridCell.Tab.0.center/0.0.1920.1054@0.0.1920.1054" timestamp="1585664479938" />
-    <state width="1898" height="280" key="GridCell.Tab.0.left" timestamp="1585664479937">
+    <state width="1898" height="280" key="GridCell.Tab.0.center/0.0.1920.1054@0.0.1920.1054" timestamp="1585692783911" />
+    <state width="1898" height="280" key="GridCell.Tab.0.left" timestamp="1585692783910">
       <screen x="0" y="0" width="1920" height="1054" />
     </state>
     <state width="1802" height="245" key="GridCell.Tab.0.left/0.0.1824.948@0.0.1824.948" timestamp="1585597037048" />
-    <state width="1898" height="280" key="GridCell.Tab.0.left/0.0.1920.1054@0.0.1920.1054" timestamp="1585664479937" />
-    <state width="1898" height="280" key="GridCell.Tab.0.right" timestamp="1585664479939">
+    <state width="1898" height="280" key="GridCell.Tab.0.left/0.0.1920.1054@0.0.1920.1054" timestamp="1585692783910" />
+    <state width="1898" height="280" key="GridCell.Tab.0.right" timestamp="1585692783912">
       <screen x="0" y="0" width="1920" height="1054" />
     </state>
     <state width="1802" height="245" key="GridCell.Tab.0.right/0.0.1824.948@0.0.1824.948" timestamp="1585597037050" />
-    <state width="1898" height="280" key="GridCell.Tab.0.right/0.0.1920.1054@0.0.1920.1054" timestamp="1585664479939" />
+    <state width="1898" height="280" key="GridCell.Tab.0.right/0.0.1920.1054@0.0.1920.1054" timestamp="1585692783912" />
     <state width="1898" height="345" key="GridCell.Tab.1.bottom" timestamp="1585656014424">
       <screen x="0" y="0" width="1920" height="1054" />
     </state>

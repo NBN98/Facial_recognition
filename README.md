@@ -14,10 +14,10 @@
 # 3. Load the picture of the unknown order
 # 4. If you want to use your images and your name detection, update the FaceRecognition.py file and add you as a person
 First, add your in the known folder and specify it in the code like this:
-![](screenshot/AddPerson1.PNG) 
+![](screenshot/AddPerson1.png) 
 
 Then add the new created variable to known_faces_encodings and add your name to known_faces_names:
-![](screenshot/AddPerson2.PNG)
+![](screenshot/AddPerson2.png)
 
 # 5. After loading/taking your images, press the Run Button.
 ![](screenshots/screenshot2.png)

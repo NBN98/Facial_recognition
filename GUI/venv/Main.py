@@ -66,7 +66,7 @@ class GUI:
             #self.errorbox()
             pass
 
-
+    #function for taking a picture with the pi camera module and display it in the gui
     def take(self):
         if self.besetzt == False:
             self.msgbox()
@@ -92,20 +92,12 @@ class GUI:
 
 
 
-
+    #runs the face recognition algorithm of FaceRecognition.py
     def fg(self):
-        #self.stickpictures(self.img, self.img2, self.img3)
 
-        #print(self.root.filename)
-        #self.image1 = self.img
-        #self.image2 = str(self.img2)
-        #print(self.image1)
-        #print(self.image2)
-        #print()
-        #exception handling jenachdem wieviele bilder uebergeben werden
         self.path1 = "../../img/results/Resize1.jpg"
         if self.number == 1:
-            # FaceRecognition.run()
+
             FaceRecognition.run(self.path1)
             
             self.displayresult()
@@ -130,26 +122,9 @@ class GUI:
             pass
 
 
-        #self.stickpictures(str(self.new), str(self.new2))
-
-    #def saveresult(self):
-        
-        #self.face_recognition_image = cv2.imread("../../img/results/identify.jpg")
-     #   self.face_recognition_image = cv2.imread("/home/pi/Facial_recognition/img/results/identify.jpg")
-      #  self.edge = Image.fromarray(self.face_recognition_image)
-       # self.tk_edge = ImageTk.PhotoImage(self.edge)
-        #self.filename = filedialog.asksaveasfile(mode = "w", initialdir = "/../../img/results/", filetypes =(("png files", "*.png"), ("jpg files", "*.jpg")))
-                                       
-        #if not self.filename:
-         #   pass
-            
-        #else:
-         #   self.edge.save(self.filename)
 
 
-        #
-
-    def stickpictures(self, a, b):        #a, b, c
+    def stickpictures(self, a, b):        #a, b,
         self.bilda = Image.open(a)           #"/home/pi/Facial_recognition/GUI/venv/Resize1.jpg"
 
 
@@ -190,22 +165,22 @@ class GUI:
 
     def msgbox(self):
         tk.messagebox.showinfo \
-            ("Info", "Es werden 3 Aufnahmen gemacht")
+            ("Info", "3 pictures are taken")
 
    # def errorbox(self):
     #    self.berror = tk.Button(self.root, text = "Fehler", command = self.msgerror)
 
     def msgerror(self):
         tk.messagebox.showerror \
-            ("Fehler", "Es koennen nicht mehr als 3 Fotos hochgeladen werden!")
+            ("Error", "No more than 3 photos can be uploaded!")
 
     def msgerror2(self):
         tk.messagebox.showerror \
-            ("Fehler", "Entweder alle Fotos hochladen oder alle aufnehmen!")
+            ("Error", "Either upload all photos or take all!")
 
     def msgerror3(self):
         tk.messagebox.showerror \
-            ("Fehler", "Es muss mindestens ein Bild geladen / gemacht werden!")
+            ("Error", "At least one picture must be loaded / taken!")
 
     def layout(self):
         self.fr1 = tk.Frame(self.root, width=109, height=135, relief="sunken", bd=1)
@@ -222,7 +197,7 @@ class GUI:
     def display(self, x):
         #print(self.besetzt)
         if self.counter > 3:
-            print("Es sind schon 3 Bilder hochgeladen")
+            print("There are already 3 pictures uploaded")
             pass
         else:
             if self.counter == 1:
@@ -293,17 +268,13 @@ class GUI:
 
     def run(self):
         self.layout()
-        #self.button1.pack()
-        #self.savebutton()
+
         self.loadbutton()
         self.takeimagebutton()
         self.clearbutton()
         self.facial_recognitionbutton()
         self.window()
-        #self.display()
-        #self.button2.pack()
-        #self.button3.pack()
-        #self.button3.place(relx = 1, rely = 1, anchor = "se")
+
         self.label1.place(x = 355, y = 400)
         self.label2.place(x=950, y=400)
         self.label3.place(x=1520, y=400)
@@ -311,12 +282,8 @@ class GUI:
         self.label4.place(x=930, y= 430)
 
 
-
-
-
         self.label.place(x = 0, rely = 1, anchor = "sw")
-        #self.panel = Label(image=self.img)
-        #self.panel.pack()
+
         self.root.mainloop()
 
 if __name__ == '__main__':

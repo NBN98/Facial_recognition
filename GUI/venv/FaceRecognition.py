@@ -5,14 +5,17 @@ from PIL import Image, ImageDraw
 
 
 def run(x):
+    #add known pictures if you want
     image_of_bill = fr.load_image_file("/home/pi/Facial_recognition/img/known/bill.png")
     bill_face_encoding = fr.face_encodings(image_of_bill)[0]  # returns an array
     image_of_steve = fr.load_image_file("/home/pi/Facial_recognition/img/known/steve.png")
     steve_face_encoding = fr.face_encodings(image_of_steve)[0]
-
     image_of_noah = fr.load_image_file("/home/pi/Facial_recognition/img/known/Abschluss.png")
     noah_face_encoding = fr.face_encodings(image_of_noah)[0]
 
+
+
+    #add here your _name_face_encoding_ variable
     known_face_encodings = [
         bill_face_encoding,
         steve_face_encoding,
@@ -22,7 +25,7 @@ def run(x):
         # self.papa_face_encoding
 
     ]
-
+    #add your Name in this list in the right order
     known_face_names = [
         "Bill Gates",
         "Steve Jobs",
